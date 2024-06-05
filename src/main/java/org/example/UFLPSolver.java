@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class UFLPSolver {
     public static void main(String[] args) {
         try {
-            File file = new File("C:\\Users\\bruno\\IdeaProjects\\TP_AAO\\src\\main\\java\\org\\example\\cap71.txt");
+            File file = new File("C:\\Users\\bruno\\IdeaProjects\\TP_AAO\\src\\main\\java\\org\\example\\cap72.txt");
             Scanner scanner = new Scanner(file);
             scanner.useLocale(Locale.US);
 
@@ -36,10 +36,12 @@ public class UFLPSolver {
             AllocationStrategy greedySolver = new GreedySolver();
             AllocationStrategy nearestNeighborSolver = new NearestNeighborSolver();
             AllocationStrategy nearestInsertionSolver = new NearestInsertionSolver();
+            AllocationStrategy cheapestInsertionSolver = new CheapestInsertionSolver();
 
             nearestInsertionSolver.solve(problemInstance);
             greedySolver.solve(problemInstance);
             nearestNeighborSolver.solve(problemInstance);
+            cheapestInsertionSolver.solve(problemInstance);
 
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + e.getMessage());
