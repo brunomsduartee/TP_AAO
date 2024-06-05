@@ -35,7 +35,9 @@ public class UFLPSolver {
 
             AllocationStrategy greedySolver = new GreedySolver();
             AllocationStrategy nearestNeighborSolver = new NearestNeighborSolver();
+            AllocationStrategy nearestInsertionSolver = new NearestInsertionSolver();
 
+            nearestInsertionSolver.solve(problemInstance);
             greedySolver.solve(problemInstance);
             nearestNeighborSolver.solve(problemInstance);
 
