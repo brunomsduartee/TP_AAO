@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class UFLPSolver {
     public static void main(String[] args) {
         try {
-            File file = new File("C:\\Users\\bruno\\IdeaProjects\\TP_AAO\\src\\main\\java\\org\\example\\cap72.txt");
+            File file = new File("C:\\Users\\bruno\\IdeaProjects\\TP_AAO\\src\\main\\java\\org\\example\\cap71.txt");
             Scanner scanner = new Scanner(file);
             scanner.useLocale(Locale.US);
 
@@ -17,13 +17,13 @@ public class UFLPSolver {
             ProblemInstance problemInstance = new ProblemInstance(numFacilities, numCustomers);
 
             for (int i = 0; i < numFacilities; i++) {
-                double capacity = scanner.nextDouble();
+                double capacity = scanner.nextDouble();  // Ignored in solver
                 double fixedCost = scanner.nextDouble();
                 problemInstance.addFacility(new Facility(i, fixedCost));
             }
 
             for (int i = 0; i < numCustomers; i++) {
-                double demand = scanner.nextDouble();
+                double demand = scanner.nextDouble();  // Ignored in solver
                 problemInstance.addCustomer(new Customer(i));
                 for (int j = 0; j < numFacilities; j++) {
                     double cost = scanner.nextDouble();
@@ -33,15 +33,14 @@ public class UFLPSolver {
 
             scanner.close();
 
-            AllocationStrategy greedySolver = new GreedySolver();
-            AllocationStrategy nearestNeighborSolver = new NearestNeighborSolver();
-            AllocationStrategy nearestInsertionSolver = new NearestInsertionSolver();
-            AllocationStrategy cheapestInsertionSolver = new CheapestInsertionSolver();
+            GreedySolver greedySolver = new GreedySolver(problemInstance);
+            double initialCost = greedySolver.solve();
+            System.out.println("Initial Greedy Solution Cost: " + initialCost);
 
-            nearestInsertionSolver.solve(problemInstance);
-            greedySolver.solve(problemInstance);
-            nearestNeighborSolver.solve(problemInstance);
-            cheapestInsertionSolver.solve(problemInstance);
+            // Apply Local Search Solver to improve the solution
+            LocalSearchSolver localSearchSolver = new LocalSearchSolver(problemInstance);
+            double improvedCost = localSearchSolver.solve();
+            System.out.println("Improved Solution Cost after Local Search: " + improvedCost);
 
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + e.getMessage());
