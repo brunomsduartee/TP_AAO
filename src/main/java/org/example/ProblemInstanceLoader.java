@@ -24,7 +24,7 @@ public class ProblemInstanceLoader {
                 capacity = scanner.nextDouble(); // Ler o valor da capacidade
             } else {
                 scanner.next();
-                capacity = Double.MAX_VALUE; // Definir a capacidade como um valor muito alto
+                capacity = Double.MAX_VALUE; // Definir a capacidade como um valor muito alto se for uma string
             }
             double fixedCost = scanner.nextDouble();
             problemInstance.addFacility(new Facility(i, fixedCost));
