@@ -6,6 +6,8 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class ProblemInstanceLoader {
+
+
     public ProblemInstance loadInstance(String filePath) throws FileNotFoundException {
         File file = new File(filePath);
         Scanner scanner = new Scanner(file);
@@ -15,14 +17,22 @@ public class ProblemInstanceLoader {
         int numCustomers = scanner.nextInt();
         ProblemInstance problemInstance = new ProblemInstance(numFacilities, numCustomers);
 
+        // Ler informações das instalações
         for (int i = 0; i < numFacilities; i++) {
-            double capacity = scanner.nextDouble();  // Ignored in solver
+            double capacity = 0.0;
+            if (scanner.hasNextDouble()) {
+                capacity = scanner.nextDouble(); // Ler o valor da capacidade
+            } else {
+                scanner.next();
+                capacity = Double.MAX_VALUE; // Definir a capacidade como um valor muito alto
+            }
             double fixedCost = scanner.nextDouble();
             problemInstance.addFacility(new Facility(i, fixedCost));
         }
 
+        // Ler informações dos clientes
         for (int i = 0; i < numCustomers; i++) {
-            double demand = scanner.nextDouble();  // Ignored in solver
+            double demand = scanner.nextDouble();  // Ignorado no solver
             problemInstance.addCustomer(new Customer(i));
             for (int j = 0; j < numFacilities; j++) {
                 double cost = scanner.nextDouble();
