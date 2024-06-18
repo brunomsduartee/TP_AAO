@@ -9,7 +9,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         try {
-            ProblemInstance instance = loader.loadInstance("dados/ORLIB/ORLIB-uncap/130/cap131.txt");
+            ProblemInstance instance = loader.loadInstance("dados/M/Kcapmr5.txt");
 
             // Perguntar ao usuário qual algoritmo ele deseja aplicar
             System.out.println("Escolha o algoritmo a ser aplicado:");

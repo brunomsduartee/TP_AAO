@@ -1,5 +1,6 @@
 package org.example;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -7,6 +8,8 @@ public class Solution {
     private ArrayList<Facility> openFacilities;
     private double totalCost;
     private long executionTime;
+
+    private static final DecimalFormat df = new DecimalFormat("#.###");
 
     public Solution(ArrayList<Facility> openFacilities, double totalCost, long executionTime) {
         this.openFacilities = openFacilities;
@@ -31,7 +34,7 @@ public class Solution {
         System.out.println("Instalações abertas: " + openFacilities.stream()
                 .map(facility -> Integer.toString(facility.getId()))
                 .collect(Collectors.joining(", ")));
-        System.out.println("Custo total: " + totalCost);
+        System.out.println("Custo total: " + df.format(totalCost));
         System.out.println("Tempo de execução: " + executionTime + " ms");
     }
 }
