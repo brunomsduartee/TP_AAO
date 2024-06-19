@@ -4,25 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0f16fb7-de1c-43cc-960b-147deb72ba34" name="Changes" comment="comment">
+    <list default="true" id="b0f16fb7-de1c-43cc-960b-147deb72ba34" name="Changes" comment="Updated methods to start with a different initial basic solucion, where there is one facility open, another closed, and so on">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GeneticAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/example/BranchAndBound.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/example/BranchAndBound.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/example/ProblemInstanceLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/example/ProblemInstanceLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/example/SwapHeuristic.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/example/SwapHeuristic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/example/SwitchHeuristic.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/example/SwitchHeuristic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BranchAndBound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BranchAndBound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ProblemInstanceLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ProblemInstanceLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SwapHeuristic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SwapHeuristic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SwitchHeuristic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SwitchHeuristic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +144,7 @@
       <workItem from="1718709714614" duration="3516000" />
       <workItem from="1718721197477" duration="4228000" />
       <workItem from="1718788064863" duration="4396000" />
-      <workItem from="1718795383116" duration="4714000" />
+      <workItem from="1718795383116" duration="7820000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -168,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718709753674</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updated methods to start with a different initial basic solucion, where there is one facility open, another closed, and so on">
+      <option name="closed" value="true" />
+      <created>1718802111556</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718802111556</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +179,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
     <MESSAGE value="comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="comment" />
+    <MESSAGE value="Updated methods to start with a different initial basic solucion, where there is one facility open, another closed, and so on" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated methods to start with a different initial basic solucion, where there is one facility open, another closed, and so on" />
   </component>
 </project>

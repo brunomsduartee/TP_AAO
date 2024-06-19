@@ -9,13 +9,14 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         try {
-            ProblemInstance instance = loader.loadInstance("dados/ORLIB/ORLIB-uncap/130/cap131.txt");
+            ProblemInstance instance = loader.loadInstance("dados/ORLIB/ORLIB-uncap/70/cap71.txt");
 
             // Perguntar ao usuário qual algoritmo ele deseja aplicar
             System.out.println("Escolha o algoritmo a ser aplicado:");
             System.out.println("1 - Swap Heuristic");
             System.out.println("2 - Switch Heuristic");
             System.out.println("3 - Exact Algorithm (Branch and Bound)");
+            System.out.println("4 - Genetic Algorithm");
             int choice = scanner.nextInt();
 
             Solution solution = null;
@@ -29,8 +30,13 @@ public class Main {
             } else if (choice == 3) {
                 // Aplicar algoritmo exato (Branch and Bound)
                 solution = BranchAndBound.solveExact(instance);
+            } else if (choice == 4) {
+                // Aplicar Algoritmo Genético
+                System.out.println("Digite a seed para o Algoritmo Genético:");
+                int seed = scanner.nextInt();
+                solution = GeneticAlgorithm.applyGeneticAlgorithm(instance, seed);
             } else {
-                System.out.println("Escolha inválida. Por favor, selecione 1, 2 ou 3.");
+                System.out.println("Escolha inválida. Por favor, selecione 1, 2, 3, 4, 5 ou 6.");
                 return;
             }
 
