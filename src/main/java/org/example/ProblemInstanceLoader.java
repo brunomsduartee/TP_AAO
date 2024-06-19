@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class ProblemInstanceLoader {
 
-
     public ProblemInstance loadInstance(String filePath) throws FileNotFoundException {
         File file = new File(filePath);
         Scanner scanner = new Scanner(file);

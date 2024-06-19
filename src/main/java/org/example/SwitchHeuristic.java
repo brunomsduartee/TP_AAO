@@ -6,6 +6,7 @@ public class SwitchHeuristic {
 
     public static Solution applySwitch(ProblemInstance currentInstance) {
         long startTime = System.currentTimeMillis();
+        initializeSolution(currentInstance);
         boolean improvement;
         int iterations = 0;
 
@@ -52,6 +53,13 @@ public class SwitchHeuristic {
         }
 
         return new Solution(openFacilities, totalCost, executionTime);
+    }
+
+    private static void initializeSolution(ProblemInstance instance) {
+        // Alternar entre abrir e fechar instalações
+        for (int i = 0; i < instance.getFacilities().size(); i++) {
+            instance.getFacilities().get(i).setOpen(i % 2 == 0);
+        }
     }
 
     private static boolean trySwitch(ProblemInstance instance, int indexFacility) {
