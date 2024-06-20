@@ -6,18 +6,21 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         ProblemInstanceLoader loader = new ProblemInstanceLoader();
-        Scanner scanner = new Scanner(System.in);
 
         try {
-            ProblemInstance instance = loader.loadInstance("dados/ORLIB/ORLIB-uncap/70/cap71.txt");
+            ProblemInstance instance = loader.loadInstance("dados/M/Kcapmq5.txt");
 
             // Perguntar ao usuário qual algoritmo ele deseja aplicar
             System.out.println("Escolha o algoritmo a ser aplicado:");
             System.out.println("1 - Swap Heuristic");
             System.out.println("2 - Switch Heuristic");
             System.out.println("3 - Exact Algorithm (Branch and Bound)");
-            System.out.println("4 - Genetic Algorithm");
+            System.out.println("4 - Variable Neighborhood Search");
+            System.out.println("5 - Ant Colony Optimization");
+
+            Scanner scanner = new Scanner(System.in);
             int choice = scanner.nextInt();
+            scanner.close();
 
             Solution solution = null;
 
@@ -31,12 +34,13 @@ public class Main {
                 // Aplicar algoritmo exato (Branch and Bound)
                 solution = BranchAndBound.solveExact(instance);
             } else if (choice == 4) {
-                // Aplicar Algoritmo Genético
-                System.out.println("Digite a seed para o Algoritmo Genético:");
-                int seed = scanner.nextInt();
-                solution = GeneticAlgorithm.applyGeneticAlgorithm(instance, seed);
+                // Aplicar Variable Neighborhood Search
+                solution = VariableNeighborhoodSearch.solve(instance);
+            } else if (choice == 5) {
+                // Aplicar Ant Colony Optimization
+                solution = AntColonyOptimization.solve(instance);
             } else {
-                System.out.println("Escolha inválida. Por favor, selecione 1, 2, 3, 4, 5 ou 6.");
+                System.out.println("Escolha inválida. Por favor, selecione 1, 2, 3, 4 ou 5.");
                 return;
             }
 

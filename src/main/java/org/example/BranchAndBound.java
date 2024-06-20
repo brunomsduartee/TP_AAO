@@ -11,13 +11,11 @@ public class BranchAndBound {
 
     public static Solution solveExact(ProblemInstance instance) {
         long startTime = System.currentTimeMillis();
-        initializeSolution(instance);
 
         int numFacilities = instance.getFacilities().size();
         boolean[] openFacilities = new boolean[numFacilities];
 
         System.out.println("Iniciando Branch and Bound...");
-
         // Inicializa a busca no nível 0
         branchAndBound(instance, openFacilities, 0);
 
@@ -91,13 +89,6 @@ public class BranchAndBound {
         if (currentTime - lastLogTime >= 1000) { // Log progress every second
             System.out.println("Progresso: Custo atual = " + bestCost);
             lastLogTime = currentTime;
-        }
-    }
-
-    private static void initializeSolution(ProblemInstance instance) {
-        // Alternar entre abrir e fechar instalações
-        for (int i = 0; i < instance.getFacilities().size(); i++) {
-            instance.getFacilities().get(i).setOpen(i % 2 == 0);
         }
     }
 }
