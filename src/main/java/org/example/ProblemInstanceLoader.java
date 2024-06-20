@@ -15,23 +15,20 @@ public class ProblemInstanceLoader {
         int numFacilities = scanner.nextInt();
         int numCustomers = scanner.nextInt();
         ProblemInstance problemInstance = new ProblemInstance(numFacilities, numCustomers);
-
-        // Ler informações das instalações
         for (int i = 0; i < numFacilities; i++) {
             double capacity = 0.0;
             if (scanner.hasNextDouble()) {
-                capacity = scanner.nextDouble(); // Ler o valor da capacidade
+                capacity = scanner.nextDouble();
             } else {
                 scanner.next();
-                capacity = Double.MAX_VALUE; // Definir a capacidade como um valor muito alto se for uma string
+                capacity = Double.MAX_VALUE;
             }
             double fixedCost = scanner.nextDouble();
             problemInstance.addFacility(new Facility(i, fixedCost));
         }
 
-        // Ler informações dos clientes
+
         for (int i = 0; i < numCustomers; i++) {
-            double demand = scanner.nextDouble();  // Ignorado no solver
             problemInstance.addCustomer(new Customer(i));
             for (int j = 0; j < numFacilities; j++) {
                 double cost = scanner.nextDouble();

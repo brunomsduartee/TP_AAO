@@ -75,7 +75,6 @@ public class SwitchHeuristic {
         double newCost = calculateTotalCost(instance);
 
         if (newCost < currentCost) {
-            System.out.println("Melhoria encontrada ao trocar o estado da instalação " + indexFacility);
             return true; // A troca reduz o custo total, então mantém a troca
         } else {
             // Desfazer a troca se não reduzir o custo

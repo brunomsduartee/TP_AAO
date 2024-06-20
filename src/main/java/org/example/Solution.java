@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class Solution {
-    private ArrayList<Facility> openFacilities;
-    private double totalCost;
-    private long executionTime;
+    private final ArrayList<Facility> openFacilities;
+    private final double totalCost;
+    private final long executionTime;
 
     private static final DecimalFormat df = new DecimalFormat("#.###");
 

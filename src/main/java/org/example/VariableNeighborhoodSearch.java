@@ -19,7 +19,7 @@ public class VariableNeighborhoodSearch {
 
         int iterations = 0;
 
-        System.out.println("Iniciando Variable Neighborhood Search...");
+        System.out.println("Variable Neighborhood Search a começar...");
         System.out.println("Custo inicial: " + currentCost);
 
         while (iterations < MAX_ITERATIONS) {
@@ -27,7 +27,6 @@ public class VariableNeighborhoodSearch {
             int k = 1;
 
             while (k <= MAX_NEIGHBORHOODS) {
-                System.out.println("Explorando vizinhança " + k + " na iteração " + iterations);
                 ArrayList<Facility> newSolution = shake(instance, new ArrayList<>(currentSolution), k);
                 newSolution = localSearch(instance, newSolution);
                 double newCost = calculateTotalCost(instance, newSolution);
@@ -43,7 +42,7 @@ public class VariableNeighborhoodSearch {
                     }
 
                     improvement = true;
-                    k = 1; // Reset to first neighborhood
+                    k = 1;
                 } else {
                     k++;
                 }
@@ -51,14 +50,21 @@ public class VariableNeighborhoodSearch {
 
             if (!improvement) {
                 iterations++;
-                System.out.println("Nenhuma melhoria encontrada na iteração " + iterations);
             }
         }
 
         long endTime = System.currentTimeMillis();
         long executionTime = endTime - startTime;
 
-        return new Solution(bestSolution, bestCost, executionTime);
+        // Filtrar instalações abertas
+        ArrayList<Facility> openFacilities = new ArrayList<>();
+        for (Facility facility : bestSolution) {
+            if (facility.isOpen()) {
+                openFacilities.add(facility);
+            }
+        }
+
+        return new Solution(openFacilities, bestCost, executionTime);
     }
 
     private static ArrayList<Facility> initializeSolution(ProblemInstance instance) {

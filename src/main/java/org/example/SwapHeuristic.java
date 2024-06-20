@@ -20,7 +20,6 @@ public class SwapHeuristic {
                 for (int j = i + 1; j < facilities.size(); j++) {
                     if (trySwap(currentInstance, i, j)) {
                         improvement = true;
-                        swapsMade.add("Instalação " + i + " e " + j);
                     }
                 }
             }
@@ -49,7 +48,6 @@ public class SwapHeuristic {
     }
 
     private static void initializeSolution(ProblemInstance instance) {
-        // Alternar entre abrir e fechar instalações
         for (int i = 0; i < instance.getFacilities().size(); i++) {
             instance.getFacilities().get(i).setOpen(i % 2 == 0);
         }

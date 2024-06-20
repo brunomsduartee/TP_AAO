@@ -7,7 +7,6 @@ public class BranchAndBound {
 
     private static double bestCost = Double.MAX_VALUE;
     private static List<Facility> bestSolution = new ArrayList<>();
-    private static long lastLogTime = 0;
 
     public static Solution solveExact(ProblemInstance instance) {
         long startTime = System.currentTimeMillis();
@@ -15,8 +14,8 @@ public class BranchAndBound {
         int numFacilities = instance.getFacilities().size();
         boolean[] openFacilities = new boolean[numFacilities];
 
-        System.out.println("Iniciando Branch and Bound...");
-        // Inicializa a busca no nível 0
+        System.out.println("A iniciar o metodo Branch and Bound...");
+        // Inicializa a procura no nível 0
         branchAndBound(instance, openFacilities, 0);
 
         long endTime = System.currentTimeMillis();
@@ -33,7 +32,6 @@ public class BranchAndBound {
                 bestCost = currentCost;
                 bestSolution = getOpenFacilities(instance, openFacilities);
                 System.out.println("Nova melhor solução encontrada: Custo = " + bestCost);
-                logProgress();
             }
             return;
         }
@@ -84,11 +82,5 @@ public class BranchAndBound {
         return openFacilitiesList;
     }
 
-    private static void logProgress() {
-        long currentTime = System.currentTimeMillis();
-        if (currentTime - lastLogTime >= 1000) { // Log progress every second
-            System.out.println("Progresso: Custo atual = " + bestCost);
-            lastLogTime = currentTime;
-        }
-    }
+
 }

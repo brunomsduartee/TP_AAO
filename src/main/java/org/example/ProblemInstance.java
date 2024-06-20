@@ -3,9 +3,9 @@ package org.example;
 import java.util.ArrayList;
 
 public class ProblemInstance {
-    private ArrayList<Facility> facilities;
-    private ArrayList<Customer> customers;
-    private double[][] allocationCosts;
+    private final ArrayList<Facility> facilities;
+    private final ArrayList<Customer> customers;
+    private final double[][] allocationCosts;
 
     public ProblemInstance(int numFacilities, int numCustomers) {
         facilities = new ArrayList<>();
